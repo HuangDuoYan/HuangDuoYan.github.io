@@ -1,0 +1,41 @@
+body {
+    background-color: #2067B2;
+    color: white;
+    cursor: default;
+    font-family: 微软雅黑;
+}
+
+ul {
+    height: 90vh;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(auto-fill, 6.7vw);
+    font-size: 2.4vw;
+    overflow-x: auto;
+    font-weight: 100;
+    margin-top: 0;
+    padding-left: 2vw;
+    gap: 2vw 5vw;
+
+    strong {
+        font-weight: bold;
+    }
+
+    ::marker {
+        color: #5fcbec;
+    }
+}
+
+li {
+    width: 50vw;
+    height: 6.7vw;
+}
+
+li:hover {
+    background-color: #3d7bbc;
+}
+
+li:active {
+    background-color: white;
+    color: #2067B2;
+}

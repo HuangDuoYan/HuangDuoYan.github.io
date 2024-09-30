@@ -1,0 +1,65 @@
+body {
+    background-color: #2067B2;
+    color: white;
+    cursor: default;
+    font-family: 微软雅黑;
+    font-size: 2.4vw;
+    font-weight: 100;
+}
+
+.pic {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 15vw;
+    display: flex;
+}
+
+.match {
+    border: white 1px solid;
+    margin-bottom: 1vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.top::before, .bottom::before {
+    border-top: white 1px solid;
+    content: "";
+    height: 50%;
+    position: absolute;
+    left: -4vw;
+    top: 50%;
+    width: 4vw;
+}
+
+.begin .top::before, .begin .bottom::before {
+    display: none;
+}
+
+.col {
+    margin-right: 4vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.semi {
+    gap: 7.5vw;
+}
+
+.final .match {
+    gap: 7vw;
+}
+
+* strong {
+    font-weight: bold;
+}
+
+.container:hover {
+    color: #2067B2;
+    background-color: white;
+}

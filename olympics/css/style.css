@@ -1,0 +1,170 @@
+body {
+    background-color: #2067B2;
+    color: white;
+    cursor: default;
+    font-family: 微软雅黑;
+}
+
+h1 {
+    font: 100 4.5vw 微软雅黑;
+    margin-top: 3.37vw;
+    margin-left: 7.86vw;
+}
+
+button {
+    background-color: transparent;
+    color: white;
+    border: white solid 0.21vw;
+    font-weight: bold;
+    font-size: 1.18vw;
+    height: 2.46vw;
+}
+
+h1 .back {
+    font: 100 4vw "Segoe UI Symbol";
+    border: none;
+    margin-right: 3.2vw;
+    height: 100%;
+}
+
+.option-button {
+    display: flex;
+    /*border: white solid;*/
+    width: 31.18vw;
+    height: 10.2vw;
+}
+
+.option-button:hover, button:hover {
+    background-color: #3d7bbc;
+}
+
+.option-button:active, button:active {
+    color: #2067B2;
+    background-color: white;
+}
+
+.option-button .icon {
+    width: 8.6vw;
+    height: 8.6vw;
+    background-color: #4DA7DD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1vw;
+    margin-top: 0.6vw;
+    margin-left: 0.6vw;
+}
+
+.option-button .icon img {
+    width: 60%;
+    height: 60%;
+}
+
+.option-button .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-button .text .title {
+    font-size: 2.14vw;
+    font-weight: 100;
+}
+
+.option-button .text .description {
+    font-size: 1.18vw;
+    margin-top: 0.3vw;
+}
+
+.container {
+    margin-top: 2.7vw;
+    margin-left: 14.5vw;
+    height: calc(75vh - 2.7vw);
+}
+
+.container .options {
+    display: grid;
+    overflow-x: auto;
+    grid-template-rows: repeat(auto-fill, 10.2vw);
+    grid-auto-flow: column;
+    height: 100%;
+}
+
+.container h2 {
+    margin-left: 0.6vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2.14vw;
+    font-weight: 100;
+}
+
+.search-box {
+    display: flex;
+    height: 3.48vw;
+}
+
+input {
+    border: white solid 0.21vw;
+    background-color: transparent;
+    color: white;
+    font-size: 1.34vw;
+}
+
+input::placeholder {
+    color: white;
+}
+
+.container input {
+    margin-left: 0.6vw;
+    height: 3vw;
+    width: 24.6vw;
+}
+
+.rank {
+    overflow-x: auto;
+    margin-top: 2vw;
+}
+
+.rank table {
+    font-size: 1.34vw;  
+    text-wrap: nowrap;
+    border-collapse: collapse;
+}
+
+.rank table th {
+    position: sticky;
+    left: 0;
+    background-color: #2067B2;
+}
+
+.rank table th, .rank table td {
+    padding: 1.5vw 3.5vw 1.5vw 3.5vw;
+    border-bottom: white solid 1px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #2067B2;
+    background-color: white;
+}
+
+.daypicker, .sexpicker {
+    font: 100 2.14vw 微软雅黑;
+    color: white;
+    background-color: #2067B2;
+    border: none;
+    margin-left: 2vw;
+}
+
+.schdfram {
+    margin-top: 2.7vw;
+    border: none;
+    width: 100%;
+    height: 90%;
+}
+
+.bracketfram {
+    margin-top: 2.7vw;
+    border: none;
+    width: 100%;
+    height: 90%;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>olympics</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/schd.js"></script>
+</head>
+
+<body>
+    <h1><button class="back" onclick="window.location.href='index.html';">&#xe071;</button>赛程
+        <select class="daypicker" id="day" onchange="daypicker_change(this);">
+            <option value="nothing">点击选择比赛日</option>
+            <option value="0724">7 月 24 日，周三</option>
+            <option value="0725">7 月 25 日，周四</option>
+            <option value="0726">7 月 26 日，周五</option>
+            <option value="0727">7 月 27 日，周六</option>
+            <option value="0728">7 月 28 日，周日</option>
+            <option value="0729">7 月 29 日，周一</option>
+            <option value="0730">7 月 30 日，周二</option>
+            <option value="0731">7 月 31 日，周三</option>
+            <option value="0801">8 月 1 日，周四</option>
+            <option value="0802">8 月 2 日，周五</option>
+            <option value="0803">8 月 3 日，周六</option>
+            <option value="0804">8 月 4 日，周日</option>
+            <option value="0805">8 月 5 日，周一</option>
+            <option value="0806">8 月 6 日，周二</option>
+            <option value="0807">8 月 7 日，周三</option>
+            <option value="0808">8 月 8 日，周四</option>
+            <option value="0809">8 月 9 日，周五</option>
+            <option value="0810">8 月 10 日，周六</option>
+            <option value="0811">8 月 11 日，周日</option>
+        </select>
+    </h1>
+    <div class="container">
+        <h2>选择一项比赛以查看赛况</h2>
+        <iframe class="schdfram"></iframe>
+    </div>
+</body>
+
+</html>
