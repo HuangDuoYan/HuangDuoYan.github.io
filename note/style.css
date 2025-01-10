@@ -1,0 +1,170 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑, 黑体, sans-serif;
+}
+
+#cont {
+    display: flex;
+    height: 95vh;
+}
+
+#folder {
+    width: 200px;
+    border-right: 5px solid #f0f0f0;
+    padding: 0 10px;
+    cursor: default;
+}
+
+#list {
+    width: 300px;
+    padding: 0 10px;
+    border-right: 5px solid #f0f0f0;
+    cursor: default;
+}
+
+#edit {
+    padding: 0 10px;
+    background-color: #f0f0f0;
+}
+
+#title {
+    display: block;
+    width: 99%;
+    font-weight: 100;
+    font-size: 36px;
+    font-family: inherit;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+#content {
+    display: block;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+.num {
+    background-color: #ddd;
+    float: right;
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+.delete-btn {
+    color: red;
+    font-weight: 900;
+    float: right;
+    display: none;
+}
+
+.rename_cat {
+    float: right;
+    display: none;
+}
+
+.restore-btn {
+    color: blue;
+    float: right;
+    display: none;
+}
+
+.delete-btn:hover, .rename_cat:hover, .restore-btn:hover {
+    border: 1px solid black;
+}
+
+li:hover .delete-btn, li:hover .rename_cat, li:hover .restore-btn {
+    display: inline;
+}
+
+.sel {
+    background-color: #CCE8FF;
+    border: 1px solid black;
+}
+
+.hide {
+    display: none;
+}
+
+#search {
+    width: 95%;
+}
+
+#search_field {
+    width: 90%;
+}
+
+#folder_name, .title, #search_lbl {
+    overflow-wrap: break-word;
+}
+
+#note_list li.sel.dirty span.title:after {
+    content: "*";
+    font-weight: 900;
+}
+
+.foot {
+    border-top: 5px solid #f0f0f0;
+    clear: both;
+    text-align: center;
+}
+
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+#folder_list {
+    max-height: calc(100% - 70px);
+}
+
+button {
+    border: 1px solid #d0d0d0;
+    font-size: 15px;
+    background-color: #fdfdfd;
+    padding: 5px 30px;
+    transition: background-color 0.5s;
+}
+
+    button:hover {
+        background-color: #e0eef9;
+    }
+
+    button:active {
+        background-color: #cce4f7;
+    }
+
+h2 {
+    font-weight: 100;
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+li {
+    padding: 5px;
+}
+
+#new_folder {
+    float: right;
+    width: -10px;
+}
+
+#new_note {
+    float: right;
+}
+
+#show_search {
+    color: black;
+    float: right;
+}
+
+    li:hover, #new_folder:hover, #new_note:hover, #show_search:hover {
+        background-color: #E5F3FF;
+    }

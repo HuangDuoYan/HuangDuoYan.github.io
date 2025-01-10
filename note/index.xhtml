@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh">
+<head>
+    <title>笔记</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <link rel="Stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="cont">
+        <div id="folder">
+            <h2>分类<span id="new_folder">&nbsp;&nbsp;+&nbsp;&nbsp;</span></h2>
+            <ul id="folder_list">
+                <li id="recycle">回收站</li>
+                <li id="all_note">全部笔记</li>
+                <li id="not_sort">未分类</li>
+            </ul>
+        </div>
+        <div id="list">
+            <h2><span id="folder_name">dummy</span><span id="show_search">&nbsp;🔍&nbsp;</span><span id="new_note">&nbsp;&nbsp;+&nbsp;&nbsp;</span></h2>
+            <fieldset id="search_field">
+                <legend id="search_lbl">搜索此分类的笔记：</legend>
+                <input id="search" />
+                <fieldset>
+                    <legend>搜索选项</legend>
+                    <label>
+                        <input type="radio" name="search_option" id="search_op_title" checked="checked" />仅标题</label>
+                    <label>
+                        <input type="radio" name="search_option" id="search_op_full" />全文</label>
+                </fieldset>
+            </fieldset>
+            <button id="clean_bin">清空回收站</button>
+            <button id="restore_all">还原所有项目</button>
+            <ul id="note_list">
+                <li>dummy</li>
+            </ul>
+        </div>
+        <div id="edit">
+            <input id="title" type="text" placeholder="标题" />
+            <textarea id="content" rows="24" cols="70" placeholder="正文"></textarea>
+            <button id="save">保存</button>
+            <button id="close_edit">关闭</button>
+            <label><input type="checkbox" id="wrap" />自动换行</label>
+        </div>
+    </div>
+    <div class="foot">222200428 黄铎彦 (c) 2025 保留所有权利。</div>
+    <script type="text/javascript" src="js.js"></script>
+</body>
+</html>
