@@ -151,7 +151,7 @@ class MemoManager {
 
     restoreMemo(memo_id) {
         let m = this.getMemoById(memo_id);
-        if (this.cat.findIndex(i => i === m.old_cat) === -1) this.cat.push(m.old_cat);
+        if (m.old_cat !== UNCAT && this.cat.findIndex(i => i === m.old_cat) === -1) this.cat.push(m.old_cat);
         this.saveCats();
         Object.assign(m, { cat: m.old_cat });
         this.saveMemos();
@@ -164,19 +164,22 @@ let dirty = false;
 memoTitle.oninput = memoContent.oninput = function (ev) {
     dirty = true;
     if (memoElem) memoElem.classList.add("dirty");
+    searchField.disabled = true;
 };
 
 function hideEdit() {
+    let ret = false;
     if (!dirty || confirm("更改未保存，确定要关闭吗？")) {
         edit.style.display = "none";
         dirty = false;
+        searchField.disabled = false;
         if (memoElem) {
             memoElem.classList.remove("sel");
             memoElem.classList.remove("dirty");
         }
-        return true;
+        ret = true;
     }
-    return false;
+    return ret;
 }
 
 hideEdit();
@@ -190,6 +193,7 @@ let currentMemoId = null;
 function recycleMemo(id) {
     memoManager.chgCat(id, RECYCLE_CAT);
     renderMemoList();
+    renderCatList();
     hideEdit();
 }
 
@@ -269,6 +273,7 @@ function saveMemo() {
     }
     //renderCatList();
     renderMemoList();
+    searchField.disabled = false;
 }
 
 // 删除备忘录
@@ -297,10 +302,18 @@ function renCat(cat) {
                 ok = false;
                 break;
             }
+
+        if (RESERVED_CAT.find(i => i === n)) {
+            alert("与保留分类重名，请重新输入！");
+            ok = false;
+            continue;
+        }
         if (ok) break;
     }
     memoManager.renCat(cat, n);
     renderCatList();
+    chgSel(catList.lastChild); /* TODO 这种实现依赖于，不对分类项做拖拽排序，
+     以及 MemoManager 重命名实现中，将重命名后的分类移到末尾 */
 }
 
 function delCat(cat) {
@@ -327,6 +340,7 @@ function chgSel(elem) {
 
 // 事件绑定
 newMemoBtn.addEventListener("click", () => {
+    if (!hideEdit()) return;
     clearEditor();
     currentMemoId = null; // 新建备忘录
     if (memoElem) memoElem.classList.remove("sel");
@@ -349,7 +363,7 @@ function renderCatList() {
     for (let i of catList.children) {
         i.addEventListener("click", function (event) {
             if (i === catElem || !hideEdit()) return;
-            chgSel(i); 
+            chgSel(i);
         }, true);
         if (i != allNote) {
             i.ondragover = function (ev) { ev.preventDefault(); };
