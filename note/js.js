@@ -174,7 +174,9 @@ function hideEdit() {
             memoElem.classList.remove("sel");
             memoElem.classList.remove("dirty");
         }
+        return true;
     }
+    return false;
 }
 
 hideEdit();
@@ -226,6 +228,7 @@ function renderMemoList() {
 
 // 加载备忘录到编辑界面
 function loadMemo(id, li) {
+    if (memoElem === li && dirty || !hideEdit()) return;
     const memo = memoManager.getMemoById(id);
     if (memo) {
         if (memoElem) memoElem.classList.remove("sel");
@@ -264,7 +267,7 @@ function saveMemo() {
         // 创建新备忘录
         currentMemoId = memoManager.createMemo(title, content).id;
     }
-    renderCatList();
+    //renderCatList();
     renderMemoList();
 }
 
@@ -344,7 +347,10 @@ function renderCatList() {
         catList.appendChild(li);
     }
     for (let i of catList.children) {
-        i.addEventListener("click", function (event) { chgSel(i); hideEdit(); }, true);
+        i.addEventListener("click", function (event) {
+            if (i === catElem || !hideEdit()) return;
+            chgSel(i); 
+        }, true);
         if (i != allNote) {
             i.ondragover = function (ev) { ev.preventDefault(); };
             i.ondrop = function (ev) {
